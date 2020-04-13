@@ -1,0 +1,18 @@
+<h1> Edit this Dog </h1>
+
+<ul>
+<% @dog.errors.full_messages.each do |message| %>
+    <li>
+        <%= message %>
+    </li>
+    <% end %>
+</ul>
+
+<%= form_for @dog do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+    <% end %>
+
+    <%= link_to "Index Page", dogs_path %>
+    <%= link_to "Delete Dog", dog_path(@dog), :method => :delete %>
