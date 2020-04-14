@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show,:edit,:update]
+  before_action :find_user, only: [:show,:edit,:update,:destroy]
 
   def index
     @users = User.all
@@ -29,9 +29,18 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
-    redirect_to  user_path(@user)
+    @user = User.new(user_params)
+    if  @user.valid?
+        @user.save
+        redirect_to user_path(@user)
+    else
+        render :edit
+      end
+  end
 
+  def destroy
+    @user.destroy
+    redirect_to users_path
   end
 
   private
