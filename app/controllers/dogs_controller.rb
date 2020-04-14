@@ -14,7 +14,7 @@ class DogsController < ApplicationController
 
     def create
         @dog = Dog.create(dog_params)
-    if @dog.valid?
+    if  @dog.valid?
         @dog.save
         redirect_to dog_path(@dog)
     else 
