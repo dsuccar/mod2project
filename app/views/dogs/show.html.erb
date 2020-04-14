@@ -2,8 +2,7 @@
 
 <h2><%= @dog.name %></h2>
 
-<div>
-<%= link_to "Index Page", dogs_path %>
-<%= link_to "Edit Dog", edit_user_path(@dog) %>
-<%= link_to "Delete Dog", dog_path(@dog), :method => :delete %>
-</div>
+
+<%= link_to "Create a Dog", new_dog_path %> ||
+<%= link_to "Delete Dog", dog_path(@dog), :method => :delete %> ||
+<%= link_to "Edit Dog", edit_dog_path(@dog) %>

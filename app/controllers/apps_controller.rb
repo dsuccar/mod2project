@@ -4,9 +4,7 @@ class AppsController < ApplicationController
 
 
 
-# def about
-#     render :about
-# end
+
 
 def index
   @apps = App.all
