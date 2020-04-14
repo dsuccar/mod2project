@@ -1,6 +1,8 @@
 <h1> Dog Index Page </h1>
     <ul>
         <%@dogs.each do |dog| %>
-            <li><%= dog.name %></li>
+            <li><%= link_to dog.name, dog_path(dog) %></li>
             <% end %>
     </ul>
+
+    
