@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 resources  :dogs
 resources :users
 resources :apps, only: [:index, :show]
-# get '/home', to: apps#home
+get '/home', to: "application#home"
 get '/about', to: "apps#about"
 # get '/login', to: sessions#login
 # post '/login', to :sessions#process_login

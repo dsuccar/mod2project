@@ -28,6 +28,7 @@ class DogsController < ApplicationController
 
     def update
         @dog = Dog.find(params[:id])
+        @dog = Dog.new(dog_params)
     if @dog.valid?
         @dog.save
         redirect_to dog_path(@dog)
