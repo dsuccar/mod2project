@@ -7,10 +7,13 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
-  <%= link_to "Home page", home_path %> || <%= link_to "Dog Index Page", dogs_path %> || <%= link_to "User Index Page", users_path %> || <%= link_to "Adoption Page", apps_path %>
+  <div id="nav_links">
+  <%= link_to "Home page", home_path %> || <%= link_to "Dog Index Page", dogs_path %> || <%= link_to "User Index Page", users_path %> || <%= link_to "Adoption Page", apps_path %> || <%= link_to "About Page", about_path %>
     <%= yield %>
+    </div>
   </body>
 </html>

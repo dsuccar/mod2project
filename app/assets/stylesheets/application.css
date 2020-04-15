@@ -14,39 +14,50 @@
  *= require_self
  */
 
- #nav_links {
-  float: right;
-  padding-top: 10px;
-  padding-right: 20px;
-  color: white;
-}
-#nav a:link {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
+
+
+ body { 
+    background-image: image-url('work-in-progress-01.jpg'); 
+  }
+
+  #nav_links {
+    float: right;
+    padding-top: 10px;
+    padding-right: 20px;
 }
 
-/* visited link */
-#nav a:visited {
-  text-decoration: none;
-  color: white;
-}
+#about {
+    float:left; 
+    border: 0px;
+    margin: 0px;
+    padding-top: 800px;
+    height: calc(100% - 60px);
+    width: 100%;
+    color: white;
+    text-shadow: 5px 2px 10px black;
+    
+    background-color: black;
+    background: url(logos/work-in-progress-01.jpg);
+   
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 
-/* mouse over link */
-#nav a:hover {
-  text-decoration: none;
-  color: rgb(99, 99, 99);
 }
-
-/* selected link */
-#nav a:active {
-  text-decoration: none;
-  color: white;
+html {
+    height: 100%;
 }
-
-.error {
-  color: red;
-}
-
-.field_with_errors {
-  border-color: red;
+body {
+    margin: -5px;
+    padding: 150px;
+    text-align: center;
+    background-color: #99AFFF;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    line-height: 1cm;
+    
+    /* height: 50%; */
+    
+    
 }
