@@ -17,18 +17,13 @@
     end
 
     def logged_in?
-        # if current_user
-        #     return true
-        # else
-        #     return false
-        # end
+     
 
         !!current_user
     end
 
     def authorized
 
-        # redirect_to login_path unless logged_in?
 
         if !logged_in?
             flash["error"] = "You must be logged in"

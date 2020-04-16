@@ -1,6 +1,6 @@
-<h1> Dog Index Page </h1>
+<h1> Our Amazing Available Dogs </h1>
     <ul>
-        <%@dogs.each do |dog| %>
+        <%@dogs.non_adopted.each do |dog| %>
             <li><%= link_to dog.name, dog_path(dog) %></li>
             <% end %>
     </ul>

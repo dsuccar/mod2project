@@ -7,14 +7,16 @@ class Dog < ApplicationRecord
   
   def self.non_adopted
     arr =[]
-    App.all.each{|a| arr << a.dog_id}
-    
-
-    # arr = []
-    # App.all.each{|a| arr << a.dog_id}
-    # {App.all.map(&:dog_id)}
-    byebug
-#     determine how to find avail dog vs unavail
-#     look up active record methods
-  end
+    dog_arr = []
+    App.all.each{|a|arr<<a.dog_id}
+        if Dog.all.each do |d|
+            if !arr.include? d.id
+                dog_arr << d
+                    
+            end
+            end
+        end
+        
+        dog_arr
+    end
 end

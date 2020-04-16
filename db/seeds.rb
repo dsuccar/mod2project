@@ -23,8 +23,8 @@ dog9 = Dog.create(name: "Ted")
 
 
 user1 = User.create(name:"Paul")
-user2 = User.create(name:"Danny")
-user3 = User.create(name:"T")
+user2 = User.create(name:"Danny", password: "password")
+user3 = User.create(name:"T", password: "zipz")
 user4 = User.create(name:"Chine")
 user5 = User.create(name:"Ann")
 

@@ -9,7 +9,13 @@ class DogsController < ApplicationController
     end
 
     def new
-        @dog = Dog.new
+        if !current_user
+            flash["error"] = "You must be logged in"
+            redirect_to login_path
+        else
+            @dog = Dog.new
+        end
+        
     end
 
     def create

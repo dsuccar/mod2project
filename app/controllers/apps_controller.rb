@@ -22,23 +22,26 @@ class AppsController < ApplicationController
     # user = User.find(params[:app][:user].to_i)
     # dog  = Dog.find(params[:app][:dog].to_i)
     @app = App.new(app_params)
+    if @app.valid?
+        @app.save
+        redirect_to app_path(@app.id)
+    else
+        render "new"
+        
+    end
+    
 
   
   end
 
-  def _app_form
-    @dog_list = Dog.all.select do |d|
-       d.valid? 
-      end
-  end
-
+  
   private
 
   def find_app
     @app = App.find(params[:id])
   end
 
-  def _app_params
+  def app_params
     params.require(:app).permit(:user_id, :dog_id)
 
   end
