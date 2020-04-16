@@ -2,10 +2,6 @@
 class AppsController < ApplicationController
   before_action :find_app, only: [:show]
 
-
-
-
-
   def index
     @apps = App.all
   end
