@@ -1,7 +1,9 @@
 <h1>These new owners, recently adopted!</h1>
 <ul>
   <% @apps.each do |app|%>
-    <li><%= link_to app.user.name, user_path(app.user.id)%> provided a new home to <%= link_to app.dog.name, dog_path(app.dog.id)%>. <%= link_to "More Info", app_path(app.id)%> </li>
+    <li><%= link_to app.user.name, user_path(app.user.id)%> provided a new home to
+     <%= link_to app.dog.name, dog_path(app.dog.id)%>.
+      <%= link_to "More Info", app_path(app.id)%> </li>
   <% end%>
 </ul>
 

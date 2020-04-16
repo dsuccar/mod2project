@@ -28,9 +28,10 @@ class DogsController < ApplicationController
 
     def update
         @dog = Dog.find(params[:id])
-        @dog = Dog.new(dog_params)
+        
     if @dog.valid?
-        @dog.save
+        @dog.update(dog_params)
+
         redirect_to dog_path(@dog)
     else
         render :edit

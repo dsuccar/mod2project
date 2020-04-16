@@ -10,7 +10,18 @@
   </head>
 
   <body>
-  <%= link_to "Home page", home_path %> || <%= link_to "Dog Index Page", dogs_path %> || <%= link_to "User Index Page", users_path %> || <%= link_to "Adoption Page", apps_path %>
+  <% if session[:user_id].nil? %>  
+        <div><%= link_to "Login", login_path %></div>
+      <% else %>
+        <div>Welcome to our website <%= current_user.name %></div>
+        <div><%= link_to "Logout", logout_path %></div>
+    <% end %>
+
+  <%= link_to "Home page", home_path %> 
+  || <%= link_to "Dog Index Page", dogs_path %> 
+  || <%= link_to "User Index Page", users_path %> 
+  || <%= link_to "Adoption Page", apps_path %>
+    
     <%= yield %>
   </body>
 </html>
