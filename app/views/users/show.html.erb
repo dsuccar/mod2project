@@ -2,6 +2,8 @@
 
 
 <div>
+<% if logged_in? && session[:user_id] == @user.id%>
 <%= link_to "Edit User", edit_user_path(@user) %>
 <%= link_to "Delete User", user_path(@user), :method => :delete %>
+<% end%>
 </div>

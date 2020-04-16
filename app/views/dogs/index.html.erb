@@ -4,6 +4,9 @@
             <li><%= link_to dog.name, dog_path(dog) %></li>
             <% end %>
     </ul>
+    
+    <% if logged_in?%>
     <div><%= link_to "add_dog", new_dog_path %> </div>
+    <% end%>
 
     

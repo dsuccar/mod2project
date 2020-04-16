@@ -1,6 +1,7 @@
 
 class AppsController < ApplicationController
   before_action :find_app, only: [:show]
+  before_action :authorized, exept: [:index, :show]
 
   def index
     @apps = App.all
@@ -14,9 +15,7 @@ class AppsController < ApplicationController
   end
 
   def create
-    
-    # user = User.find(params[:app][:user].to_i)
-    # dog  = Dog.find(params[:app][:dog].to_i)
+
     @app = App.new(app_params)
     if @app.valid?
         @app.save

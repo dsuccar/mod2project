@@ -1,7 +1,7 @@
 
 
   class ApplicationController < ActionController::Base
-    helper_method :current_user, :logged_in?
+    helper_method :current_user, :logged_in?, :admin?
 
     def home
     end
@@ -30,6 +30,16 @@
             redirect_to login_path
         end
     end
+
+    def admin?
+
+      User.find(session[:user_id])[:admin] == true
+           
+        
+    end
+
+
+
 end
 
 
