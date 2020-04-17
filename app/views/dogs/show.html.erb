@@ -1,6 +1,7 @@
 <h1> Doggy Page </h1>
 
 
+<<<<<<< HEAD
     <div id="show">
     <h2><%= @dog.name %></h2>
     <%= image_tag @dog.img %>
@@ -15,6 +16,15 @@
     <% end %>
 
 <% if admin?%>
+=======
+    <% if @dog.users %>
+        <% @dog.users.each do |u|%>
+        <h3>Dog has been dopted by :<%= u.name %></h3>
+        <% end%>
+    <% end %>
+
+<% if logged_in? && admin?%>
+>>>>>>> 0016d2932f81fbb9df23b3c0a270bed3f3f1a1a7
 <%= link_to "Delete Dog", dog_path(@dog), :method => :delete %> ||
 
 <%= link_to "Edit Dog", edit_dog_path(@dog) %>
