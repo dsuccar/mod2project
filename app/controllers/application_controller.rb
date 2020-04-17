@@ -24,11 +24,6 @@
 
     def authorized
 
-        !!current_user
-    end
-
-    def authorized
-
 
         if !logged_in?
             flash["error"] = "You must be logged in"
@@ -37,16 +32,12 @@
     end
 
     def admin?
-
-      User.find(session[:user_id])[:admin] == true
-           
+        if User.find_by(id: session[:user_id]) == nil
+            return false
+        else
+            User.find_by(id: session[:user_id])[:admin] 
+        end
         
-    end
-
-
-    def admin?
-        
-        User.find(session[:user_id])[:admin] 
      
         
     end
