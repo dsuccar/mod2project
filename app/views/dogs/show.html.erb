@@ -8,7 +8,7 @@
         <% end%>
     <% end %>
 
-<% if admin?%>
+<% if logged_in? && admin?%>
 <%= link_to "Delete Dog", dog_path(@dog), :method => :delete %> ||
 
 <%= link_to "Edit Dog", edit_dog_path(@dog) %>

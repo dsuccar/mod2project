@@ -1,8 +1,8 @@
 class DogsController < ApplicationController
     # before_action :authorized, except: [:index, :show,:edit, :update]
     before_action :logged_in?, except: [:index, :show]
-    before_action :authorized, except: [:index, :show]
-    before_action :admin?
+  
+    before_action :admin?, except: [:index, :show]
     
 
     def index
@@ -10,7 +10,9 @@ class DogsController < ApplicationController
     end
 
     def show 
-        @dog = Dog.find(params[:id])
+    
+            @dog = Dog.find(params[:id])
+        
     end
 
     def new
@@ -22,7 +24,7 @@ class DogsController < ApplicationController
         @dog = Dog.create(dog_params)
             if  @dog.valid?
                 @dog.save
-                redirect_to dog_path(@dog)
+                redirect_to dogs_path
             else 
                     render :new
              end

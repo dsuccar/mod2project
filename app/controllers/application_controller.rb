@@ -32,9 +32,9 @@
     end
 
     def admin?
-
-      User.find(session[:user_id])[:admin] == true
-           
+        
+        User.find(session[:user_id])[:admin] 
+     
         
     end
 
