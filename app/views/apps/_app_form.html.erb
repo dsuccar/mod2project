@@ -2,6 +2,7 @@
 <%= f.label "Select A User" %>
 <%= f.collection_select(:user_id, User.all, :id, :name) %>
 <%= f.label "Select A Dog" %>
-<%= f.collection_select(:dog_id, Dog.all.select { |d| d.valid?} , :id, :name) %>
+<%= f.collection_select(:dog_id, Dog.non_adopted, :id, :name) %>
 <%= f.submit "Adopt" %>
 <% end%>
+

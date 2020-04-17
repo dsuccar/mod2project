@@ -1,0 +1,15 @@
+<h1>Login</h1>
+
+<div class="error">
+    <%= flash["error"] %>
+</div>
+
+<%= form_tag login_path do %>
+    <%= label :name, "Username" %>
+    <%= text_field_tag :name %>
+    <%= label :password, "Password" %>
+    <%= password_field_tag :password %>
+    <%= submit_tag "Login" %>
+<% end %>
+
+<%= link_to "Create Account", new_user_path %>

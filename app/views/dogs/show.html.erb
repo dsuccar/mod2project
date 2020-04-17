@@ -1,8 +1,21 @@
-<h1> Dogs Show Page </h1>
-
-<h2><%= @dog.name %></h2>
+<h1> Doggy Page </h1>
 
 
-<%= link_to "Create a Dog", new_dog_path %> ||
+    <div id="show">
+    <h2><%= @dog.name %></h2>
+    <%= image_tag @dog.img %>
+
+
+
+
+    <% if @dog.users %>
+        <% @dog.users.each do |u|%>
+        <h3>Dog has been dopted by :<%= u.name %></h3>
+        <% end%>
+    <% end %>
+
+<% if admin?%>
 <%= link_to "Delete Dog", dog_path(@dog), :method => :delete %> ||
+
 <%= link_to "Edit Dog", edit_dog_path(@dog) %>
+<% end%>

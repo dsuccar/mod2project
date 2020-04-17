@@ -1,4 +1,9 @@
 class DogsController < ApplicationController
+    # before_action :authorized, except: [:index, :show,:edit, :update]
+    before_action :logged_in?, except: [:index, :show]
+    before_action :authorized, except: [:index, :show]
+    before_action :admin?
+    
 
     def index
         @dogs = Dog.all
@@ -13,13 +18,15 @@ class DogsController < ApplicationController
     end
 
     def create
+        
         @dog = Dog.create(dog_params)
-    if  @dog.valid?
-        @dog.save
-        redirect_to dog_path(@dog)
-    else 
-            render :new
-        end
+            if  @dog.valid?
+                @dog.save
+                redirect_to dog_path(@dog)
+            else 
+                    render :new
+             end
+            
     end
 
     def edit
@@ -28,13 +35,14 @@ class DogsController < ApplicationController
 
     def update
         @dog = Dog.find(params[:id])
-        @dog = Dog.new(dog_params)
-    if @dog.valid?
-        @dog.save
-        redirect_to dog_path(@dog)
-    else
-        render :edit
-        end
+        
+            if @dog.valid?
+                @dog.update(dog_params)
+
+                redirect_to dogs_path
+            else
+                render :edit
+            end
     end
 
     def destroy

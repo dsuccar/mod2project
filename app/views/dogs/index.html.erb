@@ -1,9 +1,13 @@
-<h1> Dog Index Page </h1>
-
+<div id="index"
+<h1> Our Amazing Available Dogs </h1>
     <ul>
-        <%@dogs.each do |dog| %>
+        <%@dogs.non_adopted.each do |dog| %>
             <li><%= link_to dog.name, dog_path(dog) %></li>
             <% end %>
     </ul>
-
+    
+    <% if logged_in?%>
+    <div><%= link_to "add_dog", new_dog_path %> </div>
+    <% end%>
+    </div>
     
