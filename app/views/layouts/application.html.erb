@@ -11,9 +11,18 @@
   </head>
 
   <body>
-  <div id="nav_links">
-  <%= link_to "Home page", home_path %> || <%= link_to "Dog Index Page", dogs_path %> || <%= link_to "User Index Page", users_path %> || <%= link_to "Adoption Page", apps_path %> || <%= link_to "About Page", about_path %>
+  <div class="container">
+  <nav>
+  <ul>
+  <li><%=  link_to "Home page", home_path %></li>
+  <li><%= link_to "Dog Index Page", dogs_path %></li> 
+  <li><%= link_to "User Index Page", users_path %></li>
+  <li><%= link_to "Adoption Page", apps_path %></li>
+  <li><%= link_to "About Page", about_path %></li>
+</ul>
+</nav>
+</div>
     <%= yield %>
-    </div>
+   
   </body>
 </html>
